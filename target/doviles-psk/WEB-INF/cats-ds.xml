@@ -1,0 +1,10 @@
+<datasources>
+    <datasource jndi-name="CatsDataSource" pool-name="CatsDataSource">
+        <driver>h2</driver>
+        <connection-url>jdbc:h2:~/h2database/CatsDB;AUTO_SERVER=TRUE</connection-url>
+        <security>
+            <user-name>dovile</user-name>
+            <password>dovile</password>
+        </security>
+    </datasource>
+</datasources>

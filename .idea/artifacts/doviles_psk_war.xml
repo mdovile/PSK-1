@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="doviles-psk:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>doviles-psk</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="doviles-psk.war">
+      <element id="artifact" artifact-name="doviles-psk:war exploded" />
+    </root>
+  </artifact>
+</component>
