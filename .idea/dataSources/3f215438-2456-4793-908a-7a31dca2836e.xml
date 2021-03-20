@@ -114,7 +114,7 @@
     <collation id="99" parent="2" name="LITHUANIAN"/>
     <collation id="100" parent="2" name="LITHUANIAN_LITHUANIA"/>
     <collation id="101" parent="2" name="MACEDONIAN"/>
-    <collation id="102" parent="2" name="MACEDONIAN_MACEDONIA"/>
+    <collation id="102" parent="2" name="MACEDONIAN_NORTH_MACEDONIA"/>
     <collation id="103" parent="2" name="MALAY"/>
     <collation id="104" parent="2" name="MALAY_MALAYSIA"/>
     <collation id="105" parent="2" name="MALTESE"/>
@@ -176,5 +176,90 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_0D0F57C7_BAC2_4F87_8644_AA08E9210330">
+      <ObjectId>4</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CacheSize>32</CacheSize>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_B70BE871_C0DC_40E2_BD11_CAB7688F6A49">
+      <ObjectId>8</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CacheSize>32</CacheSize>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <table id="166" parent="4" name="CAT">
+      <ObjectId>3</ObjectId>
+    </table>
+    <table id="167" parent="4" name="SHELTER">
+      <ObjectId>7</ObjectId>
+    </table>
+    <column id="168" parent="166" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="169" parent="166" name="AGE">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="170" parent="166" name="NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|0s</DataType>
+    </column>
+    <column id="171" parent="166" name="OWNER">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="172" parent="166" name="OPT_LOCK_VERSION">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="173" parent="166" name="SHELTER_ID">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <index id="174" parent="166" name="PRIMARY_KEY_1">
+      <ObjectId>5</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>57</SourceTextLength>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <index id="175" parent="166" name="FKPEG879T66GMX0U38K7HNUHKJ0_INDEX_1">
+      <ObjectId>11</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>81</SourceTextLength>
+      <ColNames>SHELTER_ID</ColNames>
+      <AutoCreated>1</AutoCreated>
+    </index>
+    <foreign-key id="176" parent="166" name="FKPEG879T66GMX0U38K7HNUHKJ0">
+      <ColNames>SHELTER_ID</ColNames>
+      <RefTableName>SHELTER</RefTableName>
+      <RefKeyName>PRIMARY_KEY_A</RefKeyName>
+      <RefColNames>ID</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="177" parent="167" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="178" parent="167" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <index id="179" parent="167" name="PRIMARY_KEY_A">
+      <ObjectId>9</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SourceTextLength>61</SourceTextLength>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+      <AutoCreated>1</AutoCreated>
+    </index>
   </database-model>
 </dataSource>
