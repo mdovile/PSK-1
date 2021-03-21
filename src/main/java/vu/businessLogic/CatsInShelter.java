@@ -40,7 +40,6 @@ public class CatsInShelter implements Serializable {
     }
 
     @Transactional
-    //@LoggedInvocation
     public String createCat() {
         catToCreate.setShelter(this.shelter);
         catsDAO.persist(catToCreate);

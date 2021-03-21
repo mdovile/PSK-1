@@ -11,7 +11,11 @@
     <ol>
         <ui:repeat value="#{catsInShelter.shelter.cats}" var="cat">
             <li>
-                <h:link value="#{cat.name} #{cat.age}" />
+                <h2>#{cat.name} #{cat.age}
+                    <ui:repeat value="#{cat.owners}" var="owner">
+                        #{owner.name}
+                    </ui:repeat>
+                </h2>
             </li>
         </ui:repeat>
     </ol>

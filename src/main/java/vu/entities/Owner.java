@@ -7,16 +7,16 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Cat.findAll", query = "select c from Cat as c")
+        @NamedQuery(name = "Owner.findAll", query = "select o from Owner as o")
 })
-@Table(name = "CAT")
+@Table(name = "OWNER")
 @Getter @Setter
-public class Cat implements Serializable {
+public class Owner implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,31 +26,23 @@ public class Cat implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "AGE")
-    private Integer age;
-
-    @ManyToMany
-    @JoinTable(name="CAT_OWNER")
-    private List<Owner> owners = new ArrayList<>();
-
-    @ManyToOne
-    @JoinColumn(name="SHELTER_ID")
-    private Shelter shelter;
+    @ManyToMany(mappedBy="owners")
+    private List<Cat> cats = new ArrayList<>();
 
     @Version
     @Column(name = "OPT_LOCK_VERSION")
     private Integer version;
 
-    public Cat() {
+    public Owner() {
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Cat cat = (Cat) o;
-        return Objects.equals(id, cat.id) &&
-                Objects.equals(name, cat.name);
+        Owner owner = (Owner) o;
+        return Objects.equals(id, owner.id) &&
+                Objects.equals(name, owner.name);
     }
 
     @Override
