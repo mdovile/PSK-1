@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<head>
+    <title>CAT SHELTERS</title>
+</head>
+
+<body>
+<h2>Shelters:</h2>
+<ul>
+    <ui:repeat value="#{sheltersMyBatis.allShelters}" var="shelter">
+        <li><h:link value="#{shelter.title}" outcome="cats?shelterId=#{shelter.id}" /></li>
+    </ui:repeat>
+</ul>
+<h:form>
+    <h:inputText value="#{sheltersMyBatis.shelterToCreate.title}" required="true" />
+    <h:commandButton value="Register new shelter" action="#{sheltersMyBatis.createShelter}" />
+</h:form>
+</body>
+</html>

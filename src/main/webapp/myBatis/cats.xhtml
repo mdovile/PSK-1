@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head/>
+<h:body>
+    <h2>Cats in #{catsInShelter.shelter.title} shelter:</h2>
+    <ol>
+        <h:dataTable value="#{catsInShelter.shelter.cats}" border="1" var = "cat">
+            <h:column>
+                <f:facet name="header">Cat name</f:facet>
+                #{cat.name}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Age</f:facet>
+                #{cat.age}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Owners</f:facet>
+                <ui:repeat value="#{cat.owners}" var="owner">
+                    #{owner.name}
+                </ui:repeat>
+            </h:column>
+        </h:dataTable>
+    </ol>
+    <h:form>
+        <h:inputText a:placeholder="name" value="#{catsInShelter.catToCreate.name}" required="true" />
+        <h:inputText a:placeholder="age" value="#{catsInShelter.catToCreate.age}" required="true" />
+        <h:commandButton value="Add cat to the shelter" action="#{catsInShelter.createCat}" >
+            <f:param name="shelterId" value="#{catsInShelter.shelter.id}" />
+        </h:commandButton>
+    </h:form>
+    <h:link outcome="/myBatis/shelters" value="Back to shelter list page"/>
+</h:body>
+</html>
