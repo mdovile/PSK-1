@@ -9,15 +9,24 @@
 <h:body>
     <h2>Cats in #{catsInShelter.shelter.title} shelter:</h2>
     <ol>
-        <ui:repeat value="#{catsInShelter.shelter.cats}" var="cat">
-            <li>
-                <h2>#{cat.name} #{cat.age}
-                    <ui:repeat value="#{cat.owners}" var="owner">
-                        #{owner.name}
-                    </ui:repeat>
-                </h2>
-            </li>
-        </ui:repeat>
+        <h:dataTable value="#{catsInShelter.shelter.cats}" border="1" var = "cat">
+            <h:column>
+                <f:facet name="header">Cat name</f:facet>
+                #{cat.name}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Age</f:facet>
+                #{cat.age}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Owners</f:facet>
+                <ui:repeat value="#{cat.owners}" var="owner">
+                    #{owner.name}
+                </ui:repeat>
+            </h:column>
+        </h:dataTable>
     </ol>
     <h:form>
         <h:inputText a:placeholder="name" value="#{catsInShelter.catToCreate.name}" required="true" />
