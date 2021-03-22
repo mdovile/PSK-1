@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.mybatis.cdi.Mapper;
 import vu.mybatis.model.Cat;
-import vu.mybatis.model.Owner;
-import vu.mybatis.model.Shelter;
 
 @Mapper
 public interface CatMapper {
