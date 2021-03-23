@@ -4,9 +4,9 @@
     <!-- see http://tomee.apache.org/datasource-config.html -->
 
     <!-- H2 Database -->
-    <Resource id="CatsDataSource" type="DataSource">
+    <Resource id="Cats2DataSource" type="DataSource">
         JdbcDriver = org.h2.Driver
-        JdbcUrl = jdbc:h2:~/h2database/CatsDB;AUTO_SERVER=TRUE;
+        JdbcUrl = jdbc:h2:~/h2database/Cats2DB;AUTO_SERVER=TRUE;
         UserName = dovile
         Password = dovile
         InitialSize = 1
