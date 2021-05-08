@@ -1,5 +1,6 @@
 package vu.persistence;
 
+import vu.entities.Cat;
 import vu.entities.Shelter;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -27,5 +28,9 @@ public class SheltersDAO {
 
     public Shelter findOne(Integer id) {
         return em.find(Shelter.class, id);
+    }
+
+    public Shelter update(Shelter shelter){
+        return em.merge(shelter);
     }
 }

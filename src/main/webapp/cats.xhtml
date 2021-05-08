@@ -40,6 +40,13 @@
             <f:param name="shelterId" value="#{catsInShelter.shelter.id}" />
         </h:commandButton>
     </h:form>
+    <h1>Shelter has #{catsInShelter.shelter.donations} $ funds</h1>
+    <h:form>
+        <h:inputText a:placeholder="amount" value="#{updateShelterDonations.amount}" required="true" />
+        <h:commandButton value="Donate money" action="#{updateShelterDonations.updateShelterDonations}" >
+            <f:param name="shelterId" value="#{catsInShelter.shelter.id}" />
+        </h:commandButton>
+    </h:form>
     <h:link outcome="index" value="Back to shelter list page"/>
 </h:body>
 </html>

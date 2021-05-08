@@ -12,13 +12,21 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Model
-public class Shelters {
+public class Shelters implements IShelter {
 
     @Inject
     private SheltersDAO sheltersDAO;
 
     @Getter @Setter
     private Shelter shelterToCreate = new Shelter();
+
+    public Shelter getShelterToCreate() {
+        return shelterToCreate;
+    }
+
+    public void setShelterToCreate(Shelter shelterToCreate) {
+        this.shelterToCreate = shelterToCreate;
+    }
 
     @Getter
     private List<Shelter> allShelters;
@@ -34,7 +42,7 @@ public class Shelters {
         return "index?faces-redirect=true";
     }
 
-    private void loadAllShelters(){
+    public void loadAllShelters(){
         this.allShelters = sheltersDAO.loadAll();
     }
 }

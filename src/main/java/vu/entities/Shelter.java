@@ -25,6 +25,8 @@ public class Shelter {
 
     private String title;
 
+    private double donations;
+
     @OneToMany(mappedBy = "shelter")
     private List<Cat> cats = new ArrayList<>();
 
