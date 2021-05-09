@@ -1,11 +1,11 @@
 package vu.businessLogic;
 
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Alternative;
 import java.io.Serializable;
 
 @Alternative
-@SessionScoped
+@ApplicationScoped
 public class PaymentVerificatorFast implements PaymentVerificator, Serializable {
     @Override
     public boolean verifyPayment() {

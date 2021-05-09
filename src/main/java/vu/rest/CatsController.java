@@ -42,6 +42,7 @@ public class CatsController {
         CatsDto catDto = new CatsDto();
         catDto.setName(cat.getName());
         catDto.setAge(cat.getAge());
+        catDto.setShelterId(cat.getShelter().getId());
 
         return Response.ok(catDto).build();
     }
@@ -60,7 +61,9 @@ public class CatsController {
             }
             existingCat.setName(catData.getName());
             existingCat.setAge(catData.getAge());
+            existingCat.setShelter(sheltersDAO.findOne(catData.getShelterId()));
             catsDAO.update(existingCat);
+
             return Response.ok().build();
         } catch (OptimisticLockException ole) {
             return Response.status(Response.Status.CONFLICT).build();
