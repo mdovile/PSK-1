@@ -23,6 +23,10 @@ public class Shelter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
     private String title;
 
     private double donations;

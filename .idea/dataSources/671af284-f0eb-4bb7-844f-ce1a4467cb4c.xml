@@ -176,20 +176,20 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_083CA5C4_6846_43F2_83A4_71C9061D1A51">
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_4F8DBF92_F0C1_4316_8031_0CD9D50477EF">
       <ObjectId>9</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_87AB70B1_5808_4923_8952_17657BB0AEEC">
-      <ObjectId>4</ObjectId>
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_E999AC59_CC27_4039_B746_00F4D867BEEA">
+      <ObjectId>13</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_C89A4AEF_B335_47A0_A098_CFD1A29269A2">
-      <ObjectId>13</ObjectId>
+    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_F933C87D_AE6D_40B6_BD0E_419B587819F9">
+      <ObjectId>4</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
@@ -328,7 +328,11 @@
       <Position>3</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <index id="192" parent="170" name="PRIMARY_KEY_A">
+    <column id="192" parent="170" name="OPT_LOCK_VERSION">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <index id="193" parent="170" name="PRIMARY_KEY_A">
       <ObjectId>14</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>61</SourceTextLength>

@@ -1,6 +1,5 @@
 package vu.persistence;
 
-import vu.entities.Cat;
 import vu.entities.Shelter;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -31,6 +30,8 @@ public class SheltersDAO {
     }
 
     public Shelter update(Shelter shelter){
-        return em.merge(shelter);
+        shelter = em.merge(shelter);
+        em.flush();
+        return shelter;
     }
 }
